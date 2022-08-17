@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/shared/Card.astro';
+import Button from '../components/shared/Button.astro';
+import Counter from '../components/Counter.svelte';
+
+---
+
+<Layout>
+	<div class="grid grid-cols-12 w-full h-auto md:h-128">
+		<div class="relative col-span-full md:col-span-4 flex justify-center items-center gap-0 w-full h-screen md:h-full bg-white border border-black">
+			<div class="absolute inset-y-0 -right-16 md:-right-32 leading-none flex flex-col justify-center items-center w-auto h-full">
+				<h1 class="text-9xl font-black text-black">Vanta</h1>
+				<h1 class="text-9xl font-black text-black -mt-20 ml-8">black</h1>
+			</div>
+		</div>
+		<div class="relative col-span-full md:col-span-8 flex justify-center items-center gap-0 w-full h-80 md:h-full">
+			<span class="text-left max-w-xs md:max-w-sm mt-8">
+				経験豊富なプログラマーおよびデザイナーであり、テクノロジー業界で働いた実績があります。デザイン、Web、モバイル開発のスキル
+			</span>
+			<div class="absolute inset-x-0 bottom-0 w-full h-32 bg-zinc-100 z-0"></div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		background: #4f39fa;
+		padding: 1rem;
+		border-radius: 0.4rem;
+		color: var(--color-bg);
+	}
+
+	.instructions code {
+		font-size: 0.875em;
+		border: 0.1em solid var(--color-border);
+		border-radius: 4px;
+		padding: 0.15em 0.25em;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

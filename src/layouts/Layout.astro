@@ -1,0 +1,35 @@
+---
+import HeadCommon from "../components/general/HeadCommon.astro";
+import HeadSEO from "../components/general/HeadSEO.astro";
+import Header from "../components/general/Header.astro";
+import Transition from "../components/transition/DefaultTransition.svelte";
+import Footer from "../components/general/Footer.astro";
+import * as CONFIG from '../config';
+
+const { frontmatter = {}, headings } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<HeadCommon />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<title>
+			{frontmatter.title ? `${frontmatter.title} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}
+		</title>
+	</head>
+	<body>
+		<Header/>
+		<main>
+			<Transition>
+				<slot />
+			</Transition>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+</style>

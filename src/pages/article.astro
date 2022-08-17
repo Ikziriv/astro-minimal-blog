@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout>
+	<div class="grid grid-cols-12 w-full h-auto md:h-128">
+		<div class="relative border-r border-black col-span-full md:col-span-4 flex justify-center items-start gap-0 w-full h-40 md:h-full bg-white px-8">
+			<div class="flex flex-col justify-between items-start leading-none w-auto h-96 pt-8 md:pt-16">
+				<h1 class="text-4xl md:text-4xl font-black text-black">Articles in</h1>
+				<div class="w-auto h-auto mb-16">
+					<ul>
+						<li>News</li>
+						<li>Design</li>
+						<li>Development</li>
+						<li>Technology</li>
+						<li>Cryto</li>
+					</ul>
+				</div>
+			</div>
+			<div class="absolute bottom-0 left-0 bg-black w-12 h-12"></div>
+		</div>
+		<div class="relative col-span-full md:col-span-8 flex justify-end items-start gap-0 w-full h-screen md:h-full overflow-y-auto">
+			<div class="flex flex-col w-full h-auto md:pt-16">
+				<div class="flex flex-row w-full h-auto bg-white border-b border-black shadow p-8">
+					<div class="flex flex-col">
+						<h1 class="font-bold text-2xl">Article Title</h1>
+						<span class="text-md leading-none">Excerpt</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+</style>

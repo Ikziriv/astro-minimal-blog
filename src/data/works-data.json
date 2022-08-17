@@ -1,0 +1,8 @@
+[{
+    "title": "Ship Less JavaScript with Astro",
+    "description": "Astro is a way to build websites that ships zero JavaScript by default. Only add JS when you need it for maximum performance! Fred K. Schott will teach us how it works.",
+    "url": "https://youtu.be/z15YLsLMtu4?list=PLz8Iz-Fnk_eTpvd49Sa77NiF8Uqq5Iykx",
+    "host": "Jason Lengstorf",
+    "participants": ["Fred K. Schott"],
+    "date": "2021-05-08"
+}]
