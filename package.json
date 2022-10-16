@@ -6,9 +6,8 @@
         "dev": "astro dev",
         "start": "astro dev",
         "build": "astro build",
-        "preview": "astro preview",
-        "astro": "astro",
-        "server": "node server/server.mjs"
+        "postbuild": "node ./scripts/search/prepare-index.js",
+        "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs"
     },
     "devDependencies": {
         "@astrojs/node": "^1.0.0",
@@ -18,7 +17,9 @@
         "autoprefixer": "^10.4.8",
         "canvas-confetti": "^1.5.1",
         "concurrently": "^7.3.0",
+        "globby": "^13.1.2",
         "lightcookie": "^1.0.25",
+        "mark.js": "^8.11.1",
         "nanostores": "^0.5.13",
         "postcss": "^8.4.16",
         "tailwindcss": "^3.1.8",
@@ -29,8 +30,12 @@
         "workbox-window": "^6.5.4"
     },
     "dependencies": {
+        "@astrojs/rss": "^0.2.2",
         "@astrojs/sitemap": "^1.0.0",
+        "dayjs": "^1.11.5",
+        "lunr": "^2.3.9",
+        "sitemap": "^7.1.1",
         "svelte": "^3.49.0",
-        "vite": "^3.0.8"
+        "vite": "^3.0.9"
     }
 }

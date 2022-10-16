@@ -1,6 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ListCard from '../components/shared/ListCard.astro';
 
+interface MarkdownFrontmatter {
+  pubDate: string | number | Date;
+  date: number;
+}
+
+const allPosts = await Astro.glob<MarkdownFrontmatter>('./article/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
 ---
 
 <Layout>
@@ -22,12 +30,7 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 		<div class="relative col-span-full md:col-span-8 flex justify-end items-start gap-0 w-full h-screen md:h-full overflow-y-auto">
 			<div class="flex flex-col w-full h-auto md:pt-16">
-				<div class="flex flex-row w-full h-auto bg-white border-b border-black shadow p-8">
-					<div class="flex flex-col">
-						<h1 class="font-bold text-2xl">Article Title</h1>
-						<span class="text-md leading-none">Excerpt</span>
-					</div>
-				</div>
+				{sortedPosts.map(p => <ListCard post={p} /> )}
 			</div>
 		</div>
 	</div>
